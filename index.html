@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script defer type="text/javascript" src="main.js"></script>
+    </head>
+<body>
+
+<h1>Form Builder</h1>
+
+ <fieldset class="border" margin="0" created="false">
+    <p class="question_paragraph"> 
+        <label class="label-style1">Question</label >
+        <input class="input" type="text" id="question"><br>
+    </p>
+    <p class="type_paragraph"> 
+        <label class="label-style2" >Type</label>
+        <select class="type_select">
+            <option value="Yes/No" selected>Yes/No</option>
+            <option value="Number">Number</option>
+            <option value="Text">Text</option>
+        </select>
+    </p>
+    <p>
+        <button>Add form</button>
+    </p>
+ </fieldset>
+
+<p id="save_to_json">
+    <button>Save to local storage</button>
+</p>
+</body>
+</html>

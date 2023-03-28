@@ -1,0 +1,30 @@
+.border {
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: rgb(0, 0, 0);
+    width: 445px;
+    height: 140px;
+    }
+.center {
+    margin: auto;
+    width: 50%;
+    margin-top: 15px;
+    padding: 10px;
+    }
+.label-style1 {
+    padding: 10px; padding-right:50px;
+}
+.label-style2 {
+    padding: 10px; padding-right:75px;
+}
+.input {
+    width: 300px;
+}
+.small_input {
+    width: 150px;
+    height: 18px;
+    margin-left:10px;
+}
+.button {
+        margin-left: 0px;
+}
