@@ -1,16 +1,40 @@
+
 .border {
+    margin-top:20px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(238, 237, 237);
+    width: 445px;
+    height: 150px;
+}
+.sub_border {
+    margin-top:10px;
     border-style: solid;
     border-width: 2.5px;
     border-color: rgb(0, 0, 0);
+    background-color: rgb(251, 249, 249);
     width: 445px;
-    height: 140px;
-    }
-.center {
-    margin: auto;
-    width: 50%;
-    margin-top: 15px;
-    padding: 10px;
-    }
+    height: 190px;
+}
+.uncomfirmed_border {
+    margin-top:20px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(224, 224, 224);
+    background-color: rgb(255, 255, 255);
+    width: 445px;
+    height: 150px;   
+}
+.uncomfirmed_sub_border {
+    margin-top:10px;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: rgb(224, 224, 224);
+    background-color: rgb(255, 255, 255);
+    width: 445px;
+    height: 190px;
+}
 .label-style1 {
     padding: 10px; padding-right:50px;
 }
@@ -22,9 +46,9 @@
 }
 .small_input {
     width: 150px;
-    height: 18px;
+    height: 13px;
     margin-left:10px;
 }
-.button {
-        margin-left: 0px;
+.delete_button {
+    color:red;
 }

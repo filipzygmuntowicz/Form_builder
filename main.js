@@ -104,6 +104,20 @@ function createAddFormButton() {
   paragraph.appendChild(button)
   return paragraph
 }
+function createDeleteFormButton() {
+  const paragraph = document.createElement('p');
+  const button = document.createElement('button');
+  paragraph.classList.add('delete_button')
+  button.appendChild(document.createTextNode('Delete form'))
+  button.addEventListener('click', deleteElement);
+  button.classList.add('delete_button')
+  paragraph.appendChild(button)
+  return paragraph
+}
+
+function deleteElement() {
+    this.parentNode.parentNode.remove()
+}
 
 function createSubFormButton() {
   const paragraph = document.createElement('p');
@@ -119,8 +133,8 @@ function addForm() {
   const parent = this.parentNode.parentNode
   this.remove() // removes the button
   const nextFieldset = document.createElement('fieldset');
-  nextFieldset.classList.add('border')
-
+  nextFieldset.classList = ['uncomfirmed_border']
+  parent.classList = ['border']
   nextFieldset.appendChild(createSecondParagraph());
   nextFieldset.appendChild(createThirdParagraph());
   nextFieldset.appendChild(createAddFormButton());
@@ -128,18 +142,18 @@ function addForm() {
   nextFieldset.setAttribute('created', false)
   parent.setAttribute('created', true)
   document.body.insertBefore(nextFieldset, parent.nextSibling);
-  document.body.insertBefore(document.createElement('br'), nextFieldset);
   const type = parent.querySelector('.type_paragraph > select')
   const question = parent.querySelector('.question_paragraph > input')
   question.disabled = true
   type.disabled = true
   parent.appendChild(createSubFormButton());
+  parent.appendChild(createDeleteFormButton());
 }
 
 function createSubFormElement() {
   const parent = this.parentNode.parentNode
   const nextFieldset = document.createElement('fieldset');
-  nextFieldset.classList.add('border')
+  nextFieldset.classList = ['uncomfirmed_sub_border']
   const paragraph = parent.querySelector('.type_paragraph')
   nextFieldset.appendChild(createFirstParagraph(paragraph.querySelector('select').value));
   nextFieldset.appendChild(createSecondParagraph());
@@ -150,6 +164,9 @@ function createSubFormElement() {
   nextFieldset.setAttribute('margin', margin + 100)
   nextFieldset.previousFieldset = parent
   nextFieldset.setAttribute('created', false)
+  if (parent.querySelector('.delete_button')) {
+    parent.querySelector('.delete_button').remove()
+  }
   document.body.insertBefore(nextFieldset, parent.nextSibling);
 }
 
@@ -165,6 +182,8 @@ function createAddSubFormButton() {
 
 function addSubForm() {
   const parent = this.parentNode.parentNode
+  parent.appendChild(createDeleteFormButton());
+  parent.classList = ['sub_border']
   this.remove() // removes the button
   const type = parent.querySelector('.type_paragraph > select')
   const question = parent.querySelector('.question_paragraph > input')
