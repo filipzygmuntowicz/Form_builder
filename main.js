@@ -182,7 +182,6 @@ function createAddSubFormButton() {
 
 function addSubForm() {
   const parent = this.parentNode.parentNode
-  parent.appendChild(createDeleteFormButton());
   parent.classList = ['sub_border']
   this.remove() // removes the button
   const type = parent.querySelector('.type_paragraph > select')
@@ -200,6 +199,7 @@ function addSubForm() {
   question.disabled = true
   parent.setAttribute('created', true)
   parent.appendChild(createSubFormButton());
+  parent.appendChild(createDeleteFormButton());
 }
 
 function saveToJson() {
